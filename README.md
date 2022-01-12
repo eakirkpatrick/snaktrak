@@ -12,9 +12,9 @@ Repo Structure:
 
 How to Build and Run Code:
 - Firstly, ensure that docker (https://docs.docker.com/engine/install/) and docker-compose (https://docs.docker.com/compose/install/) are installed on your machine
-- Then clone the repository using `git clone https://github.com/CU-CSCI-3308-Fall-2021/CSCI-3308-Fall21-012-07.git`
+- Then clone the repository using `git clone https://github.com/eakirkpatrick/snaktrak.git`
 
-- To run this application, simply run the command `docker-compose up -d` from inside the CSCI-3308-Fall21-012-07/Project Code folder (in your command-line/terminal)  - You can open the application in the browser by navigating to `localhost:3000` in your browser of choice
+- To run this application, simply run the command `docker-compose up -d` from inside the snaktrak/Project Code folder (in your command-line/terminal)  - You can open the application in the browser by navigating to `localhost:3000` in your browser of choice
 - You can shut down the application using:
   `docker-compose down`
 - To test the application, see test_cases.txt within the Project Code Folder
