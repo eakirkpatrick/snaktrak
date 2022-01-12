@@ -41,9 +41,9 @@ app.use(session({
 const dbConfig = {
 	host: 'db',
 	port: 5432,
-	database: 'snaktrak_db',
-	user: 'snakker',
-	password: 'pwd'
+  database: process.env.POSTGRES_DB,
+	user:  process.env.POSTGRES_USER,
+	password: process.env.POSTGRES_PASSWORD
 };
 
 var db = pgp(dbConfig);
