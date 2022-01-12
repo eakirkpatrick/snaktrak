@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+
+  <!--JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="./app/css/landing.css">
+
+  <link rel="icon" href="./app/resources/snack.png">
+
+  <title>SnakTrak</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./">
+      <img src="./app/resources/snack.png" width="50" height="50" alt="">
+    </a>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./">SnakTrak</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item abt-link">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item features-link">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item login-link">
+            <a class="nav-link" href="./login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="landing">
+      <div class="padded">
+        <h1>SnakTrak</h1>
+      </div>
+      <div class="padded">
+        <img class="logo" src="./app/resources/snack.png" alt="">
+      </div>
+      <div class="padded">
+        <button type="button" class="btn btn-primary loginButton">Login</button>
+        <button type="button" class="btn btn-primary registerButton">Register</button>
+      </div>
+      <div class="padded">
+        <img class="down-arrow landing-to-about" src="./app/resources/down-arrow.png" alt="">
+      </div>
+    </div>
+
+    <div class="about">
+      <div class="padded">
+        <h1>About</h1>
+      </div>
+      <div>
+        <img class="logo" src="./app/resources/pizza.png" alt="">
+      </div>
+      <div class="padded">
+        <h2>One Piece of the Pie.</h2>
+        <p>We help you keep track of the boring stuff so you can do you.</p>
+        <p>We are a small startup based out of Boulder, CO, helping housemates keep track of shared food and living costs since 2021.</p>
+        <p>While our technology isn't the be all end all of cost sharing (we have Venmo to thank for that), we hope our app helps you out!</p>
+      </div>
+      <div>
+        
+      </div>
+      <div class="padded">
+        <img class="text-center down-arrow about-to-features" src="./app/resources/down-arrow.png" alt="">
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="padded">
+        <h1>Features</h1>
+      </div>
+      <div class="grid-container">
+        <div class="grid-child padded">
+          <img class="logo padded" src="./app/resources/fridge.png" alt="">
+          <h2>Fridge Item Management</h2>
+          <p>Stay organized with our state of the art item tracking system for food shared between roommates.</p>
+        </div>
+        <div class="grid-child padded">
+          <img class="logo padded" src="./app/resources/pie-chart (1).png" alt="">
+          <h2>Live Debt Tracker</h2>
+          <p>Know who owes you what, and what you owe—with handy graphics to help guide your financial decisions.</p>
+        </div>
+        <div class="grid-child padded">
+          <img class="logo padded" src="./app/resources/bills.png" alt="">
+          <h2>Billing</h2>
+          <p>Stay on top of your monthly utility, internet, and other bills with auto-generated monthly reports and split costs between roommates. </p>
+        </div>
+      </div>
+      <div class="padded">
+        <img class="down-arrow back-to-top" src="./app/resources/up-arrow.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  <script type="text/javascript" src="./app/js/landing_script.js"></script>
+</body>
+
+</html>

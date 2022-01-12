@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+.navbar {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color:rgba(132,222,234,255);
+}
+
+.invalid {
+    color: red;
+}
+.valid {
+    color: green;
+}

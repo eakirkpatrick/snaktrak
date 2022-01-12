@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./app/css/login.css">
+        <link rel="icon" href="./app/resources/snack.png">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="./">
+              <img src="./app/resources/snack.png" width="50" height="50" alt="">
+            </a>
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./">SnakTrak</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                  <li class="nav-item abt-link">
+                    <a class="nav-link" href="./register">Register</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <div class="d-flex justify-content-center text-center">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded text-center" style="width: 30%; margin-top: 10%; margin-bottom: 10%;">
+                <div class="card-body">
+                    <h1 id="header1" class="card-title" style="margin-bottom: 7%;">Login</h1>
+
+                    <form action="login" method="post">
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Username:</span>
+                            <input type="text" class="form-control" placeholder="" name="email_entry">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Password:</span>
+                            <input type="password" class="form-control" placeholder="" name="password_entry">
+                        </div>
+                        <button class="btn btn-primary" type="submit" style="margin: 10px;">Login</button>
+
+                    </form>
+
+                    <div style="color: red">
+                      <%- matching %>
+                    </div>
+
+                    <br>
+                    <a href="./register">Don't have an account? Register here</a>
+                </div>
+            </div>
+        </div> 
+    </body>
+</html>

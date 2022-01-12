@@ -1,0 +1,40 @@
+Although we attempted to do some Mocha/Chai test cases, we were never able to successfully implement them.
+
+Here are some manual tests that we ran through in order to test our program.
+
+1 User
+--
+1. Register a new user with household id 1
+2. Log in to users account
+3. Add 6 bagels, costing 3 dollars each
+4. Grab all 6 bagels, and make sure that the chart does not appear
+
+2 Users
+--
+1. Register 2 users with household id 2
+2. Log in to both accounts
+3. Add 3 items as user 1 and 2 items as user 2
+4. Verify that all of the items show up in each other's fridge
+5. Grab the other persons items in each fridge
+6. Verify that the balances in the chart are correct, and the color coordination for debt is also correct (green indicates that they owe money to you while 
+red indicates that you owe money).
+
+3 Users
+--
+1. Register 3 users with household id 3
+2. Log into the accounts
+3. Add some items to each account
+4. Verify that by taking the items of the two other users, that your chart is updated accordingly and with the correct balance
+5. Logging into the other two accounts, make sure that the color coordination on their charts is correct and that it shows that the first
+user owes money to them.
+6. On those same two accounts try grabbing some of the first users' food to show that the balance can be updated
+7. Log back into the first user's account to make sure all of the quantities were updated correctly
+8. Clear the balance
+
+Other things to check for:
+- Make sure that once the last item is grabbed, that item no longer appears in the fridge
+- Make sure your password is correctly verified in registration
+- You cannot see other users items if they have a different household id
+- Clear the balance correctly
+- Items that you added did not change the balance
+

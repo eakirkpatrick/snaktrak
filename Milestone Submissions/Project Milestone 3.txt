@@ -1,0 +1,38 @@
+What features were completed?
+
+Landing Page:
+Implemented a bootstrap navbar and basic functionality and animation for the initial page users will see on our site. 
+Put in animated buttons to scroll between sections of the landing page using JQuery.
+
+Login & Registration Pages:
+Finished layout of login and registration page 
+Created requirements for registration, such as confirm email, confirm password, and checking if the password had 1 uppercase letter, at minimum 8 characters and 1 number.
+Login and Registration page link to each other and dashboard. 
+
+Dashboard: 
+A balance wheel to track how much each roommate owes you and additionally how much you owe each roommate.
+Implemented the start of a “feed” to see recent activity of your roommates. This does not update yet because we don’t have a database complete yet.
+The general design of the dashboard was made consistent with the rest of the pages.
+The links in the dashboard now link to other pages of the application.
+Everything uses bootstrap!
+
+Fridge:
+Ability to add elements is completed
+Food item design is developed
+General design of the fridge is completed, where items are centered and links to other pages are complete
+ 
+What worked during the demo?
+We linked all of our pages together so that the demo worked smoothly and we were able to show a seamless transition between each feature of our website. 
+ 
+What issues were faced either during the development or during the demo?
+The main issues that we are facing are design consistency.  For example, some of our navigation bars do not appear the same, and some of our visual elements are not appearing where we would like them to.  Registration (checking validity using JS)
+
+What were the suggestions offered by the TA?
+The TA suggested that we start focusing on database implementation with our website, and that we should start mapping out all of the different tables and how they connect to each other.  In regards to our application architecture diagram, our TA said that we should be more specific with our front end, and we may even want to break our diagram down to page-specific requirements if a certain page requires more complexity or resources compared to other pages.
+
+Individual contributions by each team member
+Thomas: implemented landing page
+Ben: implemented the fridge page
+Chaz: registration and login pages
+Everett: dashboard page
+

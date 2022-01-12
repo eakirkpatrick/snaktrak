@@ -1,0 +1,261 @@
+
+  <!DOCTYPE html>
+  <html lang="en" >
+  <head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- bootstrap style sheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>-->
+    <!-- js script for charting -->
+    <!--<script src="https://d3js.org/d3.v6.min.js"></script> -->
+    <!-- other js script for charting -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>-->
+    <!-- stylesheet for charting (billboard) -->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"/>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+    <link rel="stylesheet" href="/app/css/dashboard_style.css">
+    <link rel="icon" href="/app/resources/snack.png">
+
+  </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="/app/resources/snack.png" width="50" height="50" alt="">
+        </a>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">SnakTrak</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item abt-link">
+              <a class="nav-link" href="/">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container justify-content-center">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded" id="daily-feed">
+      <div class="card-heading row d-flex justify-content-center flex-nowrap" style="background:white">
+        <h1>Your Dashboard
+      </form>
+    </h1>
+      </div>
+    </div>
+  </div>
+  <!-- partial:index.partial.html -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" id="daily-feed">
+
+          <!--beginning of panel -->
+        <div class="card-heading" style="background:white">
+          <h2 class="card-title">My Fridge
+            <button type="button" class="btn btn-primary float-right btn-success" data-toggle="modal" data-target="#exampleModal">+Add</button>
+          </h3>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="/dashboard/add_food" method="post">
+                  <label for="fname">Item name:</label><br>
+                  <input type="text" class="form-control" id="itemName" name="itemName"><br>
+                  <label for="lname">Quantity:</label><br>
+                  <input type="number" class="form-control" id="quantity" name="quantity"> <br>
+                  <label for="lname">Price:</label><br>
+                  <input type="text" class="form-control" id="price" name="price">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card-body">
+          <ul class="list-group list-group-dividered list-group-full">
+            <!--everything in this list item should be added everytime something happens -->
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <div class="landing">
+
+                  </div>
+                  <div class="container" id="fridgeItemsContainer" style="display:inline-block;">
+                    <div class="row" id="fridgeItems" style="justify-content:center; align-items:center;">
+                      <div id="addItem">
+
+                      </div>
+                      <!-- This is where the fridge elements are inserted -->
+                      <%
+                      if (fridge) {
+                        var fridgeStuff = '';
+                        fridge.forEach(function(item){
+                             <!--fridgeStuff += `<option value='`+ item.id +`'>` + JSON.stringify(item.name) + `</option>`;-->
+                             fridgeStuff += `<div class="container-fluid">`;
+                             fridgeStuff += `<div class="row">`;
+                              fridgeStuff += `<div class="card" style="width: 18rem;">`;
+                                fridgeStuff += `<div class="card-body">`;
+                                  fridgeStuff += `<h5 class="card-title">` + item.food_item + `</h5>`;
+                                  fridgeStuff += `<p class="card-text"> Price: $` + item.price + `</p>`;
+                                  fridgeStuff += `<p class="card-text"> Quantity: ` + item.quantity + `</p>`;
+                                  if (item.member_id == member)
+                                  {
+                                    fridgeStuff += `<p class="card-text"> <strong>(Yours)</strong> </p>`;
+                                  }
+                                  fridgeStuff += `<form action="/dashboard/eat_food" method="post">`;
+                                  fridgeStuff += `<input type="hidden" name="food_id" id="food_id" value=`+ item.item_id + ` />`;
+                                  fridgeStuff += `<input type="submit" class="btn btn-primary float-right margin-right" value="Grab">`;
+                                  fridgeStuff += `</form>`;
+                                  fridgeStuff += '</div>';
+                                  fridgeStuff += '</div>';
+                           }); %>
+                           <%- fridgeStuff %>
+                      <% } %>
+                    </div>
+                  </div>
+              </div>
+            </li>
+        </div>
+      </div>
+    </div>
+
+
+<!-- donut chart -->
+<!-- Need to figure out a way where each piece is the same size
+but still have price data involved -->
+      <div class="col-sm-6">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="card-heading">
+            <h3 class="card-title">Balance Summary
+              <span class="pull-right label label-round label-warning"></span>
+            </h3>
+          </div>
+          <div class="card-body" style="background:white">
+          <a class="chart"></a>
+          <a class="chart"></a>
+          <a class="chart"></a>
+          <a class="chart"></a>
+          <form action="/dashboard/clear_balance" method="post">
+            <input type="submit" class="btn btn-primary float-right margin-right" value="Clear Balance">
+          </form>
+
+          <!-- <div id="donut-chart"></div>
+            <script src="./app/js/dashboard_script.js"></script>
+          </div> -->
+          <div>
+            <canvas id="balanceChart"></canvas>
+            <%
+            var square = false;
+              if (balances) {
+                if (balances.roommates.length > 0) {
+                  var prices = [];
+                  var names = [];
+                  var rgb_vals = [];
+                  balances.roommates.forEach(function(roommate){
+                    prices.push(roommate.price);
+                    names.push(roommate.name);
+                    if (roommate.negorpos) {
+                      rgb_vals.push('rgb(230, 95, 85)');
+                    } else {
+                      rgb_vals.push('rgb(116, 189, 96)');
+                    }
+                  });
+                } else {
+                  square = true;
+                }
+              } else {
+                square = true;
+              }
+            %>
+              <script>
+              var mcSquare = <%= square  %>;
+              if (mcSquare != true) {
+                const data = {
+
+                  datasets: [{
+                    label: 'Balance',
+                    data: <%- JSON.stringify(prices) %>,
+                    labels: <%- JSON.stringify(names) %>,
+                    backgroundColor: <%- JSON.stringify(rgb_vals) %>,
+                    hoverOffset: 4
+                  }]
+                };
+                const config = {
+                  type: 'doughnut',
+                  data: data,
+                  options: {
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                      var index = context.dataIndex;
+                                      var value = context.dataset.data[index];
+                                      var label = context.dataset.labels[index];
+                                      return label + '  $' + value;
+                                    },
+                                }
+                            }
+                        }
+                  }
+                };
+                var ctx = document.getElementById('balanceChart');
+                var myChart = new Chart(ctx,
+                  config
+                );
+              }
+
+            </script>
+            <h5 class="card-text" id="areWeSquare"><% if (!balances) {%><%- "You are all squared away!" %> <%} %></h5>
+            <script src="/app/js/fridge.js"></script>
+            <script id="blockOfStuff" type="text/html">
+              <!--<div class="container-fluid">
+                <div class="row">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Food item name</h5>
+                    <p class="card-text"> Here is where the rest of the item data could go.  The possibilities are endless, really.</p>
+                    <button type="button" class="btn btn-primary float-right margin-right">Grab</button>
+                  </div>
+                </div> -->
+                <form action="/dashboard/add_food" method="post">
+                  <label for="fname">Item name:</label><br>
+                  <input type="text" id="itemName" name="itemName"><br>
+                  <label for="lname">Quantity:</label><br>
+                  <input type="number" id="quantity" name="quantity"> <br>
+                  <label for="lname">Price:</label><br>
+                  <input type="text" id="price" name="price">
+                  <input type="submit" value="Submit">
+                </form>
+            </script>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+  </body>
+  </html>

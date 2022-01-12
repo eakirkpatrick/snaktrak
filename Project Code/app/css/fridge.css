@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+.navbar {
+    font-family: 'Raleway', sans-serif;
+}
+
+.margin-right{
+    margin-right: 10px !important;
+}
